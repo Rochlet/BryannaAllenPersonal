@@ -1,0 +1,6 @@
+com\mycompany\vendingmachine\Application.class
+UserInterface\UserIOImpl.class
+UserInterface\UserIO.class
+Controller\Controller.class
+DataTransferObject\Item.class
+UserInterface\Display.class

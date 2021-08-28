@@ -1,0 +1,5 @@
+penny::0.01::0
+nickle::0.05::0
+dime::0.1::0
+quarter::0.25::0
+dollar::1::0

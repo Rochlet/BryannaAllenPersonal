@@ -1,0 +1,8 @@
+Soda::2::10
+Gum::0.5::10
+Crackers::1::10
+Cookies::1.5::10
+Water::0.75::10
+Toy::5::10
+Candy::2.5::10
+Chips::1.25::10
