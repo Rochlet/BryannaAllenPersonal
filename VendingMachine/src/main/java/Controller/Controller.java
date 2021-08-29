@@ -21,21 +21,36 @@ import UserInterface.UserIOImpl;
 public class Controller {
     private UserIO io = new UserIOImpl();
     private Display display = new Display();
-    private ServiceLayer service = new ServiceLayerImpl();
+    private DataAccessObject dao = new DataAccessObjectImplement();
     
     public void run(){
-        boolean keepGoing = true;
-        String input;
+          boolean keepGoing = true;
+          String input;
         
-        do {
-            display.theMachine();
-            
-            input = io.readString("Would you like to get something?");
-            input = input.toLowerCase();
-            switch (input) {
-                case "yes":
-                    display.enterMoneyBanner();
-                    Coin coin = service.getMoney();
+          do {
+              display.theMachine();
+
+              input = io.readString("Would you like to get something?");
+              input = input.toLowerCase();
+              switch (input) {
+                    case "yes":
+                        display.enterMoneyBanner();
+                        //should be something like insertMoney()
+                        do {
+                              String answer = io.readString("Would you like to put in some money?");
+                              answer = answer.toLowerCase();
+                              if (answer == "yes") {
+                                  input = io.readString("What coin are you inserting?");
+                                  input = input.toLowerCase();
+                                  dao.addCoin(input);
+                              }
+                    } while (input == "yes");
+                    
+                    display.acceptMoneyBanner();
+                    display.pickItemBanner();
+                    //should be something like pickItem()
+                    input = io.readString("What would you like?");
+                    
                     break;
                 case "no":
                     keepGoing = false;

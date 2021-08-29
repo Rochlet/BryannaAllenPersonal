@@ -53,4 +53,32 @@ public class Display {
         io.print("|     MONEY   ACCEPTED     |");
         io.print("|__________________________|");
     }
+    
+    public void pickItemBanner() {
+        io.print("____________________________");
+        io.print("|                          |");
+        io.print("|    PICK   AN   ITEM      |");
+        io.print("|__________________________|");
+    }
+    
+    public void itemSelectedBanner() {
+        io.print("____________________________");
+        io.print("|                          |");
+        io.print("|     ITEM   SELECTED      |");
+        io.print("|__________________________|");
+    }
+    
+    public void itemDispensingBanner() {
+        io.print("____________________________");
+        io.print("|                          |");
+        io.print("|    ITEM   DISPENSING     |");
+        io.print("|__________________________|");
+    }
+    
+    public void enjoyBanner() {
+        io.print("____________________________");
+        io.print("|                          |");
+        io.print("|          ENJOY           |");
+        io.print("|__________________________|");
+    }
 }

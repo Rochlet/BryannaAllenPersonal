@@ -15,8 +15,11 @@ import java.util.List;
  */
 public interface DataAccessObject {
     void addCoin(String name) throws Exception;
+    void addItems() throws Exception;
     List<Item> getAllItems() throws Exception;
     List<Coin> getAllCoins() throws Exception;
-    Item getItem(String name);
-    Item removeItem(String name);
+    Item getItem(String name) throws Exception;
+    Coin getCoin(Strinig name) throws Exception;
+    void removeItem(String name) throws Exception;
+    void removeCoins() throws Exception;
 }

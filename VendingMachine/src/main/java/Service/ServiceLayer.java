@@ -12,5 +12,5 @@ import DataTransferObject.Coin;
  * @author 88bry
  */
 public interface ServiceLayer {
-    Coin getMoney();
+    
 }

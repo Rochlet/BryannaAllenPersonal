@@ -38,6 +38,17 @@ public class DataAccessObjectImplement implements DataAccessObject {
         currentCoin.setNumOfCoins(prevNumOfCoin + 1);
         writeMoney();
     }
+    
+    @Override
+    public void addItems() throws Exception {
+        loadContents();
+        List<Item> itemList = items.getAllKeys();
+        for (Item currentItem : itemList) {
+            currentItem.setNumOfItems(10);
+        }
+        writeItems();
+    }
+        
 
     @Override
     public List<Item> getAllItems() throws Exception {
@@ -52,14 +63,34 @@ public class DataAccessObjectImplement implements DataAccessObject {
     }
 
     @Override
-    public Item getItem(String name) {
+    public Item getItem(String name) throws Exception {
         loadContents();
-        return
+        return items.get(name);
+    }
+    
+    @Override
+    public Coin getCoin(String name) throws Exception {
+        loadMoney();
+        return coins.get(name);
     }
 
     @Override
-    public Item removeItem(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void removeItem(String name) throws Exception {
+        loadContents();
+        Item currentItem = items.get(name);
+        int prevNumOfItems = currentItem.getNumOfItems();
+        currentItem.setNumOfItems(prevNumOfItems - 1)
+        writeContents();
+    }
+    
+    @Override
+    void removeCoins() throws Exception {
+        loadMoney();
+        ArrayList<Coin> coinList = coins.getAllKeys();
+        for (Coin currentCoin : coinList) {
+            currentCoin.setNumOfCoins(0);
+        }
+        writeMoney();
     }
     
     private Item unmarshallItem(String itemAsText){
